@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaintroej01;
+package javaintro;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author rczgr
  */
-public class JavaIntroEj01 {
+public class JavaIntroTutorial {
 
     /**
      * @param args the command line arguments
