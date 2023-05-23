@@ -41,4 +41,27 @@ public class utils {
         }
     }
 
+    public static void printMatrix(char[][] matrix) {
+        for (char[] row : matrix) {
+            for (char element : row) {
+                System.out.print("[" + element + "]");
+            }
+            System.out.println("");
+        }
+    }
+
+    public static int getNumberOfDigits(int number) {
+        if (number == 0) {
+            return 1;
+        }
+
+        int count = 0;
+        while (number != 0) {
+            number /= 10;
+            count++;
+        }
+
+        return count;
+    }
+
 }
