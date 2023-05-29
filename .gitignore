@@ -1,3 +1,4 @@
-/JavaIntro/dist/
-/JavaIntro/build/
+dist/
+build/
+out/
 .idea
