@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ej01.service;
+package ej01;
 
-import ej01.entity.Book;
+import ej01.Book;
 import java.util.Scanner;
 
 /**
