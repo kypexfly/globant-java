@@ -37,6 +37,11 @@ public class CoffeMaker {
         this.currentCapacity = currentCapacity;
     }
 
+    @Override
+    public String toString() {
+        return "CoffeMaker{" + "maxCapacity=" + maxCapacity + ", currentCapacity=" + currentCapacity + '}';
+    }
+
     public void fill() {
         currentCapacity = maxCapacity;
     }
@@ -57,9 +62,9 @@ public class CoffeMaker {
      */
     public void serve(int amount) {
         if (currentCapacity - amount < 0) {
-            currentCapacity = 0;
             System.out.println("Can't fill the cup.");
             System.out.println("Amount served is: " + currentCapacity);
+            currentCapacity = 0;
             return;
         }
 

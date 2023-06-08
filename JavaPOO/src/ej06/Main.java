@@ -14,7 +14,9 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        CoffeMaker coffeMaker = new CoffeMaker(50, 100);
+        CoffeMaker coffeMaker = new CoffeMaker(100, 50);
+        System.out.println(coffeMaker.toString());;
+
         CoffeMakerService coffeMakerService = new CoffeMakerService();
 
         coffeMakerService.fill(coffeMaker);

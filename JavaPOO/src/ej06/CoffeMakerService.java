@@ -26,7 +26,7 @@ public class CoffeMakerService {
     }
 
     public void serveCup(CoffeMaker coffeMaker) {
-        System.out.print("Enter the amount of coffe to serve:");
+        System.out.print("Enter the amount of coffe to serve: ");
         coffeMaker.serve(scanner.nextInt());
         System.out.println("Current capacity: " + coffeMaker.getCurrentCapacity());
     }
@@ -35,7 +35,7 @@ public class CoffeMakerService {
         System.out.print("Enter the amount to add coffe: ");
         int amount = scanner.nextInt();
         if (coffeMaker.getCurrentCapacity() + amount > coffeMaker.getMaxCapacity()) {
-            coffeMaker.add(amount);
+            coffeMaker.fill();
             System.out.println("Coffe maker is full. Can't exceed max capacity.");
             return;
         }
