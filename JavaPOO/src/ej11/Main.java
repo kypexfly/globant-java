@@ -39,26 +39,26 @@ public class Main {
 
     }
 
-    public static void usingOldDate(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter the day (number): ");
-        int day = sc.nextInt();
-        System.out.print("Enter the month (number): ");
-        int month = sc.nextInt() - 1;
-        System.out.print("Enter the year (number): ");
-        int year = sc.nextInt() - 1900;
-
-        Date date = new Date(year, month, day);
-        Date currentDate = new Date();
-
-        long timeDiff = Math.abs(currentDate.getTime() - date.getTime());
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(timeDiff);
-        int yearsDiff = calendar.get(Calendar.YEAR) - 1970;
-
-        System.out.println("Year difference: " + yearsDiff);
-
-    }
+//    public static void usingOldDate(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//
+//        System.out.print("Enter the day (number): ");
+//        int day = sc.nextInt();
+//        System.out.print("Enter the month (number): ");
+//        int month = sc.nextInt() - 1;
+//        System.out.print("Enter the year (number): ");
+//        int year = sc.nextInt() - 1900;
+//
+//        Date date = new Date(year, month, day);
+//        Date currentDate = new Date();
+//
+//        long timeDiff = Math.abs(currentDate.getTime() - date.getTime());
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.setTimeInMillis(timeDiff);
+//        int yearsDiff = calendar.get(Calendar.YEAR) - 1970;
+//
+//        System.out.println("Year difference: " + yearsDiff);
+//
+//    }
 
 }
