@@ -14,8 +14,6 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // FIX: El numero de letras encontradas y faltantes no se encuentra
-        // correctamente implementado.
 
         AhorcadoService as = new AhorcadoService();
         Ahorcado ahorcado = as.crearJuego();
