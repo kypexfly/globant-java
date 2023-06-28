@@ -22,11 +22,11 @@ public class Alquiler {
     public Alquiler() {
     }
 
-    public Alquiler(String peliculaT, LocalDate fechaInicio, LocalDate fechaFin, double precio) {
+    public Alquiler(String peliculaT, LocalDate fechaInicio, LocalDate fechaFin) {
         this.tituloPelicula = peliculaT;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-        this.precio = precio;
+        this.precio = AlquilerService.calcularPrecioAlquiler(fechaInicio, fechaFin);
     }
 
     public String getTituloPelicula() {

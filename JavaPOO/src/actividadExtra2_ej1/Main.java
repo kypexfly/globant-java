@@ -4,6 +4,8 @@
  */
 package actividadExtra2_ej1;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.Scanner;
 
 /**
@@ -17,7 +19,6 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        // TODO: corregir precio de calcularPrecioAlquiler
         // TODO: corregir al comparar los títulos, por ejemplo:
         // titulo: "El conjuro", al buscar "el conjuro" o "El conjuro"
         // sale que no existe.
@@ -27,6 +28,7 @@ public class Main {
 
         int opcion = 0;
         boolean salir = false;
+
         while (!salir) {
             System.out.println(
                     "***** MENÚ PRINCIPAL ***** \n"
@@ -87,5 +89,4 @@ public class Main {
             }
         }
     }
-
 }

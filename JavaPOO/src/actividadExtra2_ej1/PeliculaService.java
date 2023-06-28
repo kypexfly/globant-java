@@ -15,7 +15,17 @@ public class PeliculaService {
 
     static Scanner sc = new Scanner(System.in).useDelimiter("\n");
 
-    private ArrayList<Pelicula> peliculas = new ArrayList<Pelicula>();
+    // Inicializar array con datos para utilizarlos inmediatamente con el servicio.
+    private ArrayList<Pelicula> peliculas = new ArrayList<Pelicula>() {
+        {
+            // Datos de películas: https://www.imdb.com/
+            add(new Pelicula("Sueño de fuga", "Drama", 1994, 142));
+            add(new Pelicula("Joker", "Drama", 2019, 122));
+            add(new Pelicula("Titanic", "Romance", 1997, 194));
+            add(new Pelicula("Interestelar", "Aventura", 2014, 169));
+            add(new Pelicula("Flash", "Aventura", 2023, 144));
+        }
+    };
 
     public void crearPelicula() {
         Pelicula pelicula = new Pelicula();
@@ -26,7 +36,7 @@ public class PeliculaService {
         pelicula.setGenero(sc.next());
         System.out.println("Ingrese el año de la película: ");
         pelicula.setAnio(sc.nextInt());
-        System.out.println("Ingrese la duración de la película: ");
+        System.out.println("Ingrese la duración (miunutos) de la película: ");
         pelicula.setDuracion(sc.nextInt());
 
         peliculas.add(pelicula);
@@ -40,9 +50,10 @@ public class PeliculaService {
 
     public void buscarPorTitulo() {
         System.out.println("Ingrese el título de la película a buscar: ");
+        String busqueda = sc.nextLine().toLowerCase();
         boolean encontrado = false;
         for (Pelicula p : peliculas) {
-            if (p.getTitulo().equalsIgnoreCase(sc.nextLine().toLowerCase())) {
+            if (p.getTitulo().equalsIgnoreCase(busqueda)) {
                 System.out.println("Sí existe:");
                 System.out.println(p);
                 encontrado = true;
@@ -57,9 +68,10 @@ public class PeliculaService {
 
     public void buscarPorGenero() {
         System.out.println("Ingrese el género de la película a buscar: ");
+        String busqueda = sc.nextLine().toLowerCase();
         boolean encontrado = false;
         for (Pelicula p : peliculas) {
-            if (p.getGenero().equalsIgnoreCase(sc.next())) {
+            if (p.getGenero().equalsIgnoreCase(busqueda)) {
                 System.out.println("Sí existe: ");
                 System.out.println(p);
                 encontrado = true;

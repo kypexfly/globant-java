@@ -18,12 +18,23 @@ import java.util.Scanner;
 public class AlquilerService {
 
     static Scanner sc = new Scanner(System.in).useDelimiter("\n");
-    private ArrayList<Alquiler> alquileres = new ArrayList<Alquiler>();
+
+    // Inicializar array con datos para utilizarlos inmediatamente con el servicio.
+    private ArrayList<Alquiler> alquileres = new ArrayList<Alquiler>() {
+        {
+            add(new Alquiler("Titanic", LocalDate.of(2023, 01, 15), LocalDate.of(2023, 01, 30)));
+            add(new Alquiler("Joker", LocalDate.of(2023, 02, 01), LocalDate.of(2023, 02, 3)));
+            add(new Alquiler("Interestelar", LocalDate.of(2023, 01, 25), LocalDate.of(2023, 02, 15)));
+        }
+    };
 
     // https://stackoverflow.com/a/39689894
     static DateTimeFormatter formatters = DateTimeFormatter.ofPattern("d/MM/uuuu");
+    static final double DIAS_BASE = 3;
     static final double INTERES = 0.1;
 
+    // Posibles mejoras para crearAlquiler():
+    //  * Que solo se puedan alquilar películas que existen en PeliculaService
     public void crearAlquiler() {
         Alquiler alquiler = new Alquiler();
 
@@ -34,8 +45,11 @@ public class AlquilerService {
         System.out.println("Ingrese la fecha de fin del alquiler (d/MM/uuuu): ");
         alquiler.setFechaFin(LocalDate.parse(sc.next(), formatters));
 
-        // TODO: calcular precio con el método calcularPrecioAlquiler()
-        double precioAlquiler = calcularPrecioAlquiler(alquiler);
+        double precioAlquiler = calcularPrecioAlquiler(
+                alquiler.getFechaInicio(),
+                alquiler.getFechaFin()
+        );
+
         alquiler.setPrecio(precioAlquiler);
 
         alquileres.add(alquiler);
@@ -80,26 +94,24 @@ public class AlquilerService {
         System.out.println("El precio total de los alquieres es: " + precioTotal);
     }
 
-    // Método privado dado que es para uso interno de la clase
-    private double calcularPrecioAlquiler(Alquiler a) {
+    public static double calcularPrecioAlquiler(LocalDate fechaInicio, LocalDate fechaFin) {
         int diasAlquilados = calcularDiasAlquilados(
-                a.getFechaInicio(),
-                a.getFechaFin()
+                fechaInicio,
+                fechaFin
         );
 
-        if (diasAlquilados <= 3) {
+        if (diasAlquilados <= DIAS_BASE) {
             return 10;
         } else {
             // Interés compuesto a partir de diasAlquilados > 3
             // Fórmula interés compuesto: 
             // https://ikiwi.net.ar/interes-compuesto/
-            return 10 * Math.pow(1 + INTERES, diasAlquilados);
+            return 10 * Math.pow(1 + INTERES, diasAlquilados - DIAS_BASE);
         }
 
     }
 
-    // Método privado dado que es para uso interno de la clase
-    private int calcularDiasAlquilados(LocalDate fechaInicio, LocalDate fechaFin) {
+    public static int calcularDiasAlquilados(LocalDate fechaInicio, LocalDate fechaFin) {
         return Period.between(fechaInicio, fechaFin).getDays();
     }
 }
