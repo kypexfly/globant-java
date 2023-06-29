@@ -62,7 +62,9 @@ public class Ahorcado {
         boolean seEncontroAnteriormente = false;
 
         for (char ch : palabra) {
-            estaPresente = letra == ch;
+            if (ch == letra) {
+                estaPresente = true;
+            }
         }
 
         for (Character ch : letrasEncontradas) {
@@ -106,7 +108,7 @@ public class Ahorcado {
 
     public void intentos() {
         if (maxNumJugadas > 0) {
-            System.out.println("Mensaje: Número de oportunidades restantes: " + maxNumJugadas);
+            System.out.println("Número de oportunidades restantes: " + maxNumJugadas);
         } else {
             System.out.println("Mensaje: Lo sentimos, no hay más oportunidades");
         }
