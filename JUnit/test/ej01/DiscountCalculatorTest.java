@@ -17,6 +17,8 @@ import static org.junit.Assert.*;
  */
 public class DiscountCalculatorTest {
 
+    private DiscountCalculator dc;
+
     @BeforeClass
     public static void setUpClass() {
     }
@@ -27,10 +29,12 @@ public class DiscountCalculatorTest {
 
     @Before
     public void setUp() {
+        dc = new DiscountCalculator();
     }
 
     @After
     public void tearDown() {
+        dc = null;
     }
 
     @Test
@@ -39,7 +43,7 @@ public class DiscountCalculatorTest {
         double discountRate = 1;
         double expectedDiscountedPrice = 0;
 
-        DiscountCalculator dc = new DiscountCalculator(discountRate);
+        dc.setDiscountRate(discountRate);
 
         double discountedPrice = dc.calculateDiscount(originalPrice);
 
@@ -52,7 +56,7 @@ public class DiscountCalculatorTest {
         double discountRate = 0;
         double expectedDiscountedPrice = 100;
 
-        DiscountCalculator dc = new DiscountCalculator(discountRate);
+        dc.setDiscountRate(discountRate);
 
         double discountedPrice = dc.calculateDiscount(originalPrice);
 
@@ -65,7 +69,7 @@ public class DiscountCalculatorTest {
         double discountRate = 0.1;
         double expectedDiscountedPrice = 90;
 
-        DiscountCalculator dc = new DiscountCalculator(discountRate);
+        dc.setDiscountRate(discountRate);
 
         double discountedPrice = dc.calculateDiscount(originalPrice);
 
