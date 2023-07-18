@@ -108,4 +108,5 @@ public class SecurePasswordGeneratorTest {
         assertEquals(14, password.length());
         assertTrue(password.matches("[!@#$%^&*()-_=+\\[\\]{};:',.<>/?]+"));
     }
+    
 }
