@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Libreria" package="ex03" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="libros" type="HashSet&lt;Libro&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="HashSet&lt;Libro&gt;" name="libros"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getLibros" returnType="HashSet&lt;Libro&gt;" visibility="public"/>
+        <Method name="setLibros" returnType="void" visibility="public">
+          <Argument type="HashSet&lt;Libro&gt;" name="libros"/>
+        </Method>
+        <Method name="prestamo" returnType="boolean" visibility="public">
+          <Argument type="String" name="titulo"/>
+        </Method>
+        <Method name="devolucion" returnType="boolean" visibility="public">
+          <Argument type="String" name="titulo"/>
+        </Method>
+        <Method name="mostrarLibros" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Libro" package="ex03" visibility="public" xPosition="464.0" yPosition="20.0">
+      <Fields>
+        <Field name="titulo" type="String" visibility="private"/>
+        <Field name="autor" type="String" visibility="private"/>
+        <Field name="numeroEjemplares" type="int" visibility="private"/>
+        <Field name="numeroPrestados" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="titulo"/>
+          <Argument type="String" name="autor"/>
+          <Argument type="int" name="numeroEjemplares"/>
+          <Argument type="int" name="numeroPrestados"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getTitulo" returnType="String" visibility="public"/>
+        <Method name="setTitulo" returnType="void" visibility="public">
+          <Argument type="String" name="titulo"/>
+        </Method>
+        <Method name="getAutor" returnType="String" visibility="public"/>
+        <Method name="setAutor" returnType="void" visibility="public">
+          <Argument type="String" name="autor"/>
+        </Method>
+        <Method name="getNumeroEjemplares" returnType="int" visibility="public"/>
+        <Method name="setNumeroEjemplares" returnType="void" visibility="public">
+          <Argument type="int" name="numeroEjemplares"/>
+        </Method>
+        <Method name="getNumeroPrestados" returnType="int" visibility="public"/>
+        <Method name="setNumeroPrestados" returnType="void" visibility="public">
+          <Argument type="int" name="numeroPrestados"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="libros" source="ex03.Libreria" target="ex03.Libro" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="HashSet&lt;Libro&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
