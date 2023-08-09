@@ -37,8 +37,9 @@ public class Juego {
     public void ronda() {
         int indiceJugadorActual = 0;
         boolean alguienMojado = false;
+        Jugador jugadorActual; 
         while (!alguienMojado) {
-            Jugador jugadorActual = jugadores.get(indiceJugadorActual);
+            jugadorActual = jugadores.get(indiceJugadorActual);
             alguienMojado = jugadorActual.disparo(revolver);
             if (!alguienMojado) {
                 System.out.println(jugadorActual + " pasa el revolver de agua al siguiente jugador.");

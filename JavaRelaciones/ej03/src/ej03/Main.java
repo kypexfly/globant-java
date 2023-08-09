@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package ej02;
+package ej03;
 
-import ej02.entities.Juego;
-import java.util.Scanner;
+import ej03.entities.Baraja;
+import ej03.entities.Carta;
 
 /**
  *
@@ -13,14 +13,18 @@ import java.util.Scanner;
  */
 public class Main {
 
-    private static Scanner sc = new Scanner(System.in).useDelimiter("\n");
+    public static boolean hola;
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Juego juego = new Juego();
-        juego.llenarJuego();
-        juego.ronda();
+
+        if (hola) {
+            System.out.println("Verdadero");
+        } else {
+            System.out.println("Falso");
+        }
     }
+
 }

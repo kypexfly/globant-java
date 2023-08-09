@@ -2,3 +2,10 @@ dist/
 build/
 out/
 .idea
+/JUnit/nbproject/private/
+/TaskManager/nbproject/private/
+/JavaColecciones/nbproject/private/
+/JavaRelaciones/nbproject/private/
+/JavaRelaciones/ej01/target/
+/JavaRelaciones/ej02/nbproject/private/
+/JavaRelaciones/ej03/nbproject/private/
