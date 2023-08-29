@@ -44,6 +44,7 @@ public class Electrodomestico {
         comprobarConsumoEnergetico(consumoEnergetico);
         this.precio = precio;
         this.peso = peso;
+        this.precio = 100;
     }
 
     public double getPrecio() {
@@ -78,7 +79,7 @@ public class Electrodomestico {
         this.peso = peso;
     }
 
-    private final void comprobarConsumoEnergetico(Character letra) {
+    private void comprobarConsumoEnergetico(Character letra) {
         if ((letra.compareTo('A') > 0 && letra.compareTo('F') < 0)) {
             consumoEnergetico = letra;
         } else {
@@ -88,7 +89,7 @@ public class Electrodomestico {
         }
     }
 
-    private final void comprobarColor(String color) {
+    private void comprobarColor(String color) {
         if (COLORES_DISPONIBLES.contains(color.toLowerCase())) {
             this.color = color;
         } else {
@@ -98,7 +99,7 @@ public class Electrodomestico {
         }
     }
 
-    private final Electrodomestico crearElectrodomestico() {
+    public Electrodomestico crearElectrodomestico() {
         Electrodomestico e = new Electrodomestico();
 
         System.out.print("Ingrese el color: ");
@@ -110,13 +111,52 @@ public class Electrodomestico {
 
         // Precio base
         e.setPrecio(1000);
+        precioFinal(e);
 
         return e;
 
     }
 
-    private void precioFinal() {
-        
+    private void precioFinal(Electrodomestico e) {
+        switch (e.consumoEnergetico) {
+            case 'A':
+                e.precio += 1000;
+                break;
+            case 'B':
+                e.precio += 800;
+                break;
+            case 'C':
+                e.precio += 600;
+                break;
+            case 'D':
+                e.precio += 500;
+                break;
+            case 'E':
+                e.precio += 300;
+                break;
+            case 'F':
+                e.precio += 100;
+                break;
+            default:
+                throw new AssertionError();
+        }
+
+        if (e.peso > 80) {
+            e.precio += 1000;
+        } else if (e.peso > 50) {
+            e.precio += 800;
+        } else if (e.peso > 20) {
+            e.precio += 500;
+        } else if (e.peso > 1) {
+            e.precio += 100;
+        } else {
+            throw new AssertionError();
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Electrodomestico{" + "precio=" + precio + ", color=" + color + ", consumoEnergetico=" + consumoEnergetico + ", peso=" + peso + '}';
     }
 
 }
