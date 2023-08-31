@@ -5,6 +5,8 @@
 package ej02;
 
 import ej02.entities.Electrodomestico;
+import ej02.entities.Lavadora;
+import ej02.entities.Televisor;
 
 /**
  *
@@ -16,8 +18,15 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Electrodomestico e = new Electrodomestico().crearElectrodomestico();
-        System.out.println(e);
+        Lavadora l = new Lavadora();
+        l.crearLavadora();
+
+        Televisor t = new Televisor();
+        t.crearTelevisor();
+
+        System.out.println("Precio final lavadora: " + l.precioFinal());
+        System.out.println("Precio final televisor: " + t.precioFinal());
+
     }
 
 }
