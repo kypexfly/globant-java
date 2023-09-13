@@ -3,10 +3,19 @@ build/
 out/
 .idea
 
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
 
 /JavaHerencia/Ex03/nbproject/private/
+/JavaHerencia/Ex04/nbproject/private/
+/JavaExcepciones/Ex01/nbproject/private/
+/JavaExcepciones/Ex02/nbproject/private/
+/JavaExcepciones/Ex03/nbproject/private/
+/JavaExcepciones/Ex04/nbproject/private/
+/JavaExcepciones/Ex05/nbproject/private/
